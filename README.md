@@ -1,6 +1,10 @@
-# flutter_example
+# flutter-sidemenu-example
+An example of flutter-sidemenu-example
 
-A new Flutter project.
+![View this](assets/gif.gif)
+
+# To run:
+* > flutter run
 
 ## Getting Started
 
