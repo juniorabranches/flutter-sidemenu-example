@@ -8,6 +8,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>{
   String mainProfilePicture = 'https://avatars0.githubusercontent.com/u/9979222?s=460&v=4';
   String otherProfilePicture = 'https://pickaface.net/gallery/avatar/demo.webmaster541295de29059.png';
+  String backgroundPicture = 'https://png.pngtree.com/thumb_back/fw800/back_pic/03/57/13/6957a01b9a3b5e3.jpg';
+
+  void switchUser(){
+    String backupString = mainProfilePicture;
+    this.setState(() {
+      mainProfilePicture = otherProfilePicture;
+      otherProfilePicture = backupString;
+    });
+  }
 
   @override
   Widget build(BuildContext context){
@@ -31,7 +40,7 @@ class _HomePageState extends State<HomePage>{
               ),
               otherAccountsPictures: <Widget>[
                 new GestureDetector(
-                  onTap: () => print("This is current User"),
+                  onTap: () => switchUser(),
                   child: new CircleAvatar(
                     backgroundImage: new NetworkImage(otherProfilePicture),
                   )
@@ -40,7 +49,7 @@ class _HomePageState extends State<HomePage>{
               decoration: new BoxDecoration(
                 image: new DecorationImage(
                   fit: BoxFit.fill,
-                  image: new NetworkImage("https://png.pngtree.com/thumb_back/fw800/back_pic/03/57/13/6957a01b9a3b5e3.jpg")
+                  image: new NetworkImage(backgroundPicture)
                 )
               )
             ),
